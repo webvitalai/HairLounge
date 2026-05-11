@@ -242,7 +242,7 @@ const Footer = () => {
               </div>
 
               <p className="footer-desc">
-                East London's most welcoming hair studio,
+                Manchester's most welcoming hair studio,
                 providing expert cuts, colour and styling
                 in a cozy modern atmosphere.
               </p>
