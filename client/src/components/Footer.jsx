@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import {
-  Scissors,
   MapPin,
   Phone,
   Mail,
@@ -29,14 +28,49 @@ const Footer = () => {
       .footer-brand{
         display:flex;
         align-items:center;
-        gap:14px;
+        gap:7px;
         text-decoration:none;
         margin-bottom:26px;
+        width:max-content;
       }
 
-      .brand-icon{
-        color:#b85c38;
-        transform:rotate(-45deg);
+      .footer-logo-wrap{
+        width:86px;
+        height:74px;
+        min-width:86px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        background:transparent !important;
+        border:none !important;
+        box-shadow:none !important;
+        border-radius:0 !important;
+        overflow:visible;
+      }
+
+      .footer-logo-img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        display:block;
+
+        background:transparent !important;
+        border:none !important;
+        box-shadow:none !important;
+
+        filter:
+          brightness(1.08)
+          contrast(1.18)
+          saturate(1.12)
+          drop-shadow(0 5px 10px rgba(0,0,0,.35));
+
+        transition:.35s ease;
+      }
+
+      .footer-brand:hover .footer-logo-img{
+        transform:scale(1.06);
       }
 
       .brand-title{
@@ -45,6 +79,9 @@ const Footer = () => {
         color:#fff;
         font-family:Georgia,serif;
         letter-spacing:-1px;
+        line-height:1;
+        margin-left:-3px;
+        white-space:nowrap;
       }
 
       .brand-title span{
@@ -193,12 +230,34 @@ const Footer = () => {
           margin-bottom:45px;
         }
 
+        .footer-logo-wrap{
+          width:78px;
+          height:68px;
+          min-width:78px;
+        }
+
+        .brand-title{
+          font-size:27px;
+          margin-left:-3px;
+        }
+
       }
 
       @media(max-width:768px){
 
+        .footer-brand{
+          gap:6px;
+        }
+
+        .footer-logo-wrap{
+          width:70px;
+          height:60px;
+          min-width:70px;
+        }
+
         .brand-title{
           font-size:24px;
+          margin-left:-2px;
         }
 
         .footer-heading{
@@ -208,6 +267,40 @@ const Footer = () => {
         .bottom-inner{
           flex-direction:column;
           text-align:center;
+        }
+
+      }
+
+      @media(max-width:430px){
+
+        .footer-brand{
+          gap:5px;
+        }
+
+        .footer-logo-wrap{
+          width:62px;
+          height:54px;
+          min-width:62px;
+        }
+
+        .brand-title{
+          font-size:21px;
+          letter-spacing:-.6px;
+          margin-left:-2px;
+        }
+
+      }
+
+      @media(max-width:360px){
+
+        .footer-logo-wrap{
+          width:56px;
+          height:50px;
+          min-width:56px;
+        }
+
+        .brand-title{
+          font-size:19px;
         }
 
       }
@@ -226,10 +319,13 @@ const Footer = () => {
 
               <a href="/" className="footer-brand">
 
-                <Scissors
-                  size={34}
-                  className="brand-icon"
-                />
+                <div className="footer-logo-wrap">
+                  <img
+                    src="/Images/Logo.png"
+                    alt="Hair & Lounge Logo"
+                    className="footer-logo-img"
+                  />
+                </div>
 
                 <div className="brand-title">
                   Hair <span>&</span> Lounge
@@ -322,7 +418,7 @@ const Footer = () => {
 
                   <span>
                     441 Wilmslow Rd, Withington 
-                    Manchester M204AN UK
+                    Manchester M20 4AN UK
                   </span>
 
                 </div>
@@ -347,7 +443,7 @@ const Footer = () => {
                     className="contact-icon"
                   />
 
-                  <a href="mailto:hello@emberandshears.co.uk">
+                  <a href="mailto:hello@hairlounge.co.uk">
                     hello@hairlounge.co.uk
                   </a>
 
@@ -373,7 +469,7 @@ const Footer = () => {
               <div className="socials">
 
                 {/* Instagram */}
-                <a href="#" className="social-btn">
+                <a href="#" className="social-btn" aria-label="Instagram">
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -388,7 +484,7 @@ const Footer = () => {
                 </a>
 
                 {/* Facebook */}
-                <a href="#" className="social-btn">
+                <a href="#" className="social-btn" aria-label="Facebook">
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +499,7 @@ const Footer = () => {
                 </a>
 
                 {/* TikTok */}
-                <a href="#" className="social-btn">
+                <a href="#" className="social-btn" aria-label="TikTok">
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
